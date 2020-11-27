@@ -1,5 +1,5 @@
 * [**Donkey Bear's Python Exercising**](#donkey-bear's-python-exercising)
-    * [¥Ø¿ý](#¥Ø¿ý)
+    * [ç›®éŒ„](#ç›®éŒ„)
     * [Automate the boring stuff with Python](#automate-the-boring-stuff-with-python)
         * [birthday_dictionary.py](#birthday_dictionarypy)
         * [print_a_heart.py](#print_a_heartpy)

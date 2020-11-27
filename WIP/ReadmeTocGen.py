@@ -68,5 +68,6 @@ for i in range(0, len(f)):
     # 判定為內文後清空
     f[i] = ''
 
-theToC = open(dirHere + '\\ToC.md','w')
+# 以原 README.md 的編碼，將目錄寫入 ToC.md
+theToC = open(dirHere + '\\ToC.md','w', encoding = readmeCodec)
 theToC.writelines(f)
