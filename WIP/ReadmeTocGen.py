@@ -23,7 +23,6 @@ for i in range(0, len(f)):
             reading = reading[:-1]
         readingAncher = '-'.join((''.join(reading[2:].lower().split('.'))).split(' '))
         f[i] = '* [**' + reading[2:] + '**](#' + readingAncher + ')\n'
-        print(f[i])
         continue
 
     # 偵測二級標題
@@ -31,8 +30,7 @@ for i in range(0, len(f)):
         if reading[-1:] == '\n':
             reading = reading[:-1]
         readingAncher = '-'.join((''.join(reading[3:].lower().split('.'))).split(' '))
-        f[i] = '    * [**' + reading[3:] + '**](#' + readingAncher + ')\n'
-        print(f[i])
+        f[i] = '    * [' + reading[3:] + '](#' + readingAncher + ')\n'
         continue
 
     # 偵測三級標題
@@ -40,8 +38,7 @@ for i in range(0, len(f)):
         if reading[-1:] == '\n':
             reading = reading[:-1]
         readingAncher = '-'.join((''.join(reading[4:].lower().split('.'))).split(' '))
-        f[i] = '        * [**' + reading[4:] + '**](#' + readingAncher + ')\n'
-        print(f[i])
+        f[i] = '        * [' + reading[4:] + '](#' + readingAncher + ')\n'
         continue
 
     # 偵測四級標題
@@ -49,8 +46,7 @@ for i in range(0, len(f)):
         if reading[-1:] == '\n':
             reading = reading[:-1]
         readingAncher = '-'.join((''.join(reading[5:].lower().split('.'))).split(' '))
-        f[i] = '            * [**' + reading[5:] + '**](#' + readingAncher + ')\n'
-        print(f[i])
+        f[i] = '            * [' + reading[5:] + '](#' + readingAncher + ')\n'
         continue
 
     # 偵測五級標題
@@ -58,8 +54,7 @@ for i in range(0, len(f)):
         if reading[-1:] == '\n':
             reading = reading[:-1]
         readingAncher = '-'.join((''.join(reading[6:].lower().split('.'))).split(' '))
-        f[i] = '                * [**' + reading[6:] + '**](#' + readingAncher + ')\n'
-        print(f[i])
+        f[i] = '                * [' + reading[6:] + '](#' + readingAncher + ')\n'
         continue
 
     # 偵測六級標題
@@ -67,9 +62,11 @@ for i in range(0, len(f)):
         if reading[-1:] == '\n':
             reading = reading[:-1]
         readingAncher = '-'.join((''.join(reading[7:].lower().split('.'))).split(' '))
-        f[i] = '                    * [**' + reading[7:] + '**](#' + readingAncher + ')\n'
-        print(f[i])
+        f[i] = '                    * [' + reading[7:] + '](#' + readingAncher + ')\n'
         continue
 
     # 判定為內文後清空
     f[i] = ''
+
+theToC = open(dirHere + '\\ToC.md','w')
+theToC.writelines(f)
