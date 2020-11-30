@@ -7,10 +7,11 @@
 > * [**前言**](#前言)
 > * [**相依性**](#相依性)
 > * [**專案說明**](#專案說明)
->   * [README-ToC-Generator](#readme-toc-generator)
->   * [Simple-README-ToC-Generator](#simple-readme-toc-generator)
->   * [DonkeBearStyle-ToC-Generator](#donkebearstyle-toc-generator)
+>   * [README-ToC-Generator](#readme-toc-generator-v10)
+>   * [Simple-README-ToC-Generator](#simple-readme-toc-generator-v10)
+>   * [DonkeBearStyle-ToC-Generator](#donkebearstyle-toc-generator-v10)
 > * [**使用說明**](#使用說明)
+> * [**更新目標**](#更新目標)
 
 ## 前言
 
@@ -51,6 +52,13 @@
 ## 使用說明
 
 　　將編寫好的 `README.md` 與目錄產生器置於同一路徑下，執行目錄產生器後即自動生成目錄 `ToC.md`。
+
+[返回目錄](#目錄)
+
+## 更新目標
+
+* 判斷標題是否自帶超連結
+* 判斷標題是否帶有 code block
 
 [返回目錄](#目錄)
 
