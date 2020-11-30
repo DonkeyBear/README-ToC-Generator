@@ -1,6 +1,6 @@
 from chardet import detect as chardetDetect
 from os import path as osPath
-from ConfigData import ConfigReader as Conf
+from ConfigData import ConfigPY as Conf
 
 # dirHere 為當前目錄，dirParent 為當前的上一層目錄
 dirHere = osPath.dirname(__file__) #<-- absolute dir the script is in
@@ -16,14 +16,26 @@ f_temp.close()
 f_readme = open(dirHere + '\\README.md', 'r', encoding = readmeCodec)
 f = f_readme.readlines()
 
-ToC_master = Conf.master
+# 匯入 ConfigPY.py 為 Conf 後，設置好變數及其意義 
+ToC_master = Conf.ToC_master
+v_h1_style = Conf.ToC_h1_style * '*'
+v_h2_style = Conf.ToC_h2_style * '*'
+v_h3_style = Conf.ToC_h3_style * '*'
+v_h4_style = Conf.ToC_h4_style * '*'
+v_h5_style = Conf.ToC_h5_style * '*'
+v_h6_style = Conf.ToC_h6_style * '*'
+
+if Conf.ToC_in_blockquote == 1:
+    v_BQ = '> '
+else:
+    v_BQ = ''
 
 # 偵測各級標題，並加上字體樣式與錨點
 for i in range(0, len(f)):
 
     reading = f[i]
 
-    if ToC_master not in [1, 2, 3, 4, 5, 6]:
+    if ToC_master in [1, 2, 3, 4, 5, 6]:
         f = []
         break
 
@@ -33,7 +45,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[2:].lower().split('.'))).split(' '))
-            f[i] = '* [' + reading[2:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + '* [' + reading[2:] + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測二級標題
@@ -42,7 +54,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[3:].lower().split('.'))).split(' '))
-            f[i] = (2 - ToC_master) * '    ' + '* [' + reading[3:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (2 - ToC_master) * '    ' + '* [' + reading[3:] + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測三級標題
@@ -51,7 +63,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[4:].lower().split('.'))).split(' '))
-            f[i] = (2 - ToC_master) * '    ' + '* [' + reading[4:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (3 - ToC_master) * '    ' + '* [' + reading[4:] + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測四級標題
@@ -60,7 +72,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[5:].lower().split('.'))).split(' '))
-            f[i] = (2 - ToC_master) * '    ' + '* [' + reading[5:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (4 - ToC_master) * '    ' + '* [' + reading[5:] + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測五級標題
@@ -69,7 +81,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[6:].lower().split('.'))).split(' '))
-            f[i] = (2 - ToC_master) * '    ' + '* [' + reading[6:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (5 - ToC_master) * '    ' + '* [' + reading[6:] + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測六級標題
@@ -78,7 +90,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[7:].lower().split('.'))).split(' '))
-            f[i] = (2 - ToC_master) * '    ' + '* [' + reading[7:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (6 - ToC_master) * '    ' + '* [' + reading[7:] + '](#' + readingAncher + ')\n'
             continue
 
     # 判定為內文後清空
