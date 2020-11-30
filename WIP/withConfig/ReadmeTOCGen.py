@@ -1,6 +1,6 @@
 from chardet import detect as chardetDetect
 from os import path as osPath
-import ConfigData
+from ConfigData import ConfigReader as Conf
 
 # dirHere 為當前目錄，dirParent 為當前的上一層目錄
 dirHere = osPath.dirname(__file__) #<-- absolute dir the script is in
@@ -16,7 +16,7 @@ f_temp.close()
 f_readme = open(dirHere + '\\README.md', 'r', encoding = readmeCodec)
 f = f_readme.readlines()
 
-ToC_master = ConfigData.Config.ToC_master
+ToC_master = Conf.master
 
 # 偵測各級標題，並加上字體樣式與錨點
 for i in range(0, len(f)):

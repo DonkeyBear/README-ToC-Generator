@@ -19,7 +19,9 @@ f_configpy.close()
 
 import Config
 
+master = Config.ToC_master
+
 if Config.ToC_in_blockquote == 1:
-    v_bq = '> '
+    blockquote = '> '
 else:
-    v_bq = ''
+    blockquote = ''
