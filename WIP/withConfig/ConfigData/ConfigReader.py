@@ -23,6 +23,3 @@ if Config.ToC_in_blockquote == 1:
     v_bq = '> '
 else:
     v_bq = ''
-
-if Config.ToC_master == 1:
-    
