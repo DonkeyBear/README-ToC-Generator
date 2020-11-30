@@ -18,12 +18,12 @@ f = f_readme.readlines()
 
 # 匯入 ConfigPY.py 為 Conf 後，設置好變數及其意義 
 ToC_master = Conf.ToC_master
-v_h1_style = Conf.ToC_h1_style * '*'
-v_h2_style = Conf.ToC_h2_style * '*'
-v_h3_style = Conf.ToC_h3_style * '*'
-v_h4_style = Conf.ToC_h4_style * '*'
-v_h5_style = Conf.ToC_h5_style * '*'
-v_h6_style = Conf.ToC_h6_style * '*'
+v_style1 = Conf.ToC_h1_style * '*'
+v_style2 = Conf.ToC_h2_style * '*'
+v_style3 = Conf.ToC_h3_style * '*'
+v_style4 = Conf.ToC_h4_style * '*'
+v_style5 = Conf.ToC_h5_style * '*'
+v_style6 = Conf.ToC_h6_style * '*'
 
 if Conf.ToC_in_blockquote == 1:
     v_BQ = '> '
@@ -45,7 +45,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[2:].lower().split('.'))).split(' '))
-            f[i] = v_BQ + '* [' + reading[2:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + '* [' + v_style1 + reading[2:] + v_style1 + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測二級標題
@@ -54,7 +54,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[3:].lower().split('.'))).split(' '))
-            f[i] = v_BQ + (2 - ToC_master) * '    ' + '* [' + reading[3:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (2 - ToC_master) * '    ' + '* [' + v_style2 + reading[3:] + v_style2 + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測三級標題
@@ -63,7 +63,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[4:].lower().split('.'))).split(' '))
-            f[i] = v_BQ + (3 - ToC_master) * '    ' + '* [' + reading[4:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (3 - ToC_master) * '    ' + '* [' + v_style3 + reading[4:] + v_style3 + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測四級標題
@@ -72,7 +72,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[5:].lower().split('.'))).split(' '))
-            f[i] = v_BQ + (4 - ToC_master) * '    ' + '* [' + reading[5:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (4 - ToC_master) * '    ' + '* [' + v_style4 + reading[5:] + v_style4 + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測五級標題
@@ -81,7 +81,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[6:].lower().split('.'))).split(' '))
-            f[i] = v_BQ + (5 - ToC_master) * '    ' + '* [' + reading[6:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (5 - ToC_master) * '    ' + '* [' + v_style5 + reading[6:] + v_style5 + '](#' + readingAncher + ')\n'
             continue
 
     # 偵測六級標題
@@ -90,7 +90,7 @@ for i in range(0, len(f)):
             if reading[-1:] == '\n':
                 reading = reading[:-1]
             readingAncher = '-'.join((''.join(reading[7:].lower().split('.'))).split(' '))
-            f[i] = v_BQ + (6 - ToC_master) * '    ' + '* [' + reading[7:] + '](#' + readingAncher + ')\n'
+            f[i] = v_BQ + (6 - ToC_master) * '    ' + '* [' + v_style6 + reading[7:] + v_style6 + '](#' + readingAncher + ')\n'
             continue
 
     # 判定為內文後清空
