@@ -32,17 +32,17 @@
 
 　　簡述不同版本的各項功能。
 
-### [README-ToC-Generator](https://github.com/DonkeyBear/README-ToC-Generator/tree/main/README-ToC-Generator)
+### [README-ToC-Generator](https://github.com/DonkeyBear/README-ToC-Generator/tree/main/README-ToC-Generator) `v1.0`
 
 　　功能相對齊全的 README 目錄產生器，可透過 `Config.txt` 設定目錄樣式。
 
-### [Simple-README-ToC-Generator](https://github.com/DonkeyBear/README-ToC-Generator/tree/main/Simple-README-ToC-Generator)
+### [Simple-README-ToC-Generator](https://github.com/DonkeyBear/README-ToC-Generator/tree/main/Simple-README-ToC-Generator) `v1.0`
 
 　　精簡的 README 目錄產生器。
 
 　　刪去了透過 `Config.txt` 設定的功能，無須導入自製模組，適合用作修改各種衍生或客製版本。
 
-### DonkeBearStyle-ToC-Generator
+### [DonkeBearStyle-ToC-Generator](https://github.com/DonkeyBear/README-ToC-Generator/tree/main/DonkeBearStyle-ToC-Generator) `v1.0`
 
 　　依照我的個人使用習慣客製化的版本，基本上我也都是直接使用這個版本產生 README 目錄的。
 
