@@ -15,7 +15,7 @@
 
 ## 前言
 
-　　此專案起源於我的第一個練習專案（[Donkey Bear's Python Exercising](https://github.com/DonkeyBear/Python-Exercising-by-DonkeyBear)），由於該專案是用以整理各種練習用的程式，所以幾乎每個檔案都是一個單獨的小程式，又因為我希望能夠將這些練習用的程式當作範例，給未來的自己能在學習時供作參考，於是在 [其 README](https://github.com/DonkeyBear/Python-Exercising-by-DonkeyBear/blob/main/README.md) 內簡述了每個程式的功能，又因為手動編輯目錄的過程要一一插入錨點過於麻煩，於是寫了一個[自動將標題轉換為錨點的程式](https://github.com/DonkeyBear/Python-Exercising-by-DonkeyBear/blob/main/Misc/AnchorTrans.py)。
+　　此專案起源於我的第一個練習專案（[Donkey Bear's Python Exercising](https://github.com/DonkeyBear/Python-Exercising-by-DonkeyBear)），由於該專案是用以整理各種練習用的程式，所以幾乎每個檔案都是一個單獨的小程式，又因為我希望能夠將這些練習用的程式當作範例，給未來的自己能在學習時供作參考，於是在[其 README](https://github.com/DonkeyBear/Python-Exercising-by-DonkeyBear/blob/main/README.md) 內簡述了每個程式的功能，又因為手動編輯目錄的過程要一一插入錨點過於麻煩，於是寫了一個[自動將標題轉換為錨點的程式](https://github.com/DonkeyBear/Python-Exercising-by-DonkeyBear/blob/main/Misc/AnchorTrans.py)。
 
 　　但是我仔細想了想，既然都要用程式轉換錨點了，何不乾脆將手動編輯目錄的整個過程都自動化呢？於是本專案就誕生了。
 
@@ -52,5 +52,11 @@
 ## 使用說明
 
 　　將編寫好的 `README.md` 與目錄產生器置於同一路徑下，執行目錄產生器後即自動生成目錄 `ToC.md`。
+
+[返回目錄](#目錄)
+
+## 授權條款
+
+　　本專案引用了 [chardet](https://pypi.org/project/chardet/) 模組，故繼承其授權條款 `LGPL-3.0 License`。
 
 [返回目錄](#目錄)
