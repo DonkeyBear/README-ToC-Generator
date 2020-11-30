@@ -25,17 +25,16 @@ v_style4 = Conf.ToC_h4_style * '*'
 v_style5 = Conf.ToC_h5_style * '*'
 v_style6 = Conf.ToC_h6_style * '*'
 
+v_BQ = ''
 if Conf.ToC_in_blockquote == 1:
     v_BQ = '> '
-else:
-    v_BQ = ''
 
 # 偵測各級標題，並加上字體樣式與錨點
 for i in range(0, len(f)):
 
     reading = f[i]
 
-    if ToC_master in [1, 2, 3, 4, 5, 6]:
+    if ToC_master not in [1, 2, 3, 4, 5, 6]:
         f = []
         break
 
