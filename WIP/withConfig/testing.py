@@ -1,4 +1,9 @@
-import Config
+from os import path as osPath
 
-print(Config.a)
-print(Config.b)
+dirHere = osPath.dirname(__file__)
+
+print('\n　　　'+dirHere+'\n')
+
+dirHere = "\\".join(dirHere.split('\\')[:-1])
+
+print('\n　　　'+dirHere+'\n')
