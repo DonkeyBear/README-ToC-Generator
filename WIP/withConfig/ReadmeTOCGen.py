@@ -16,62 +16,69 @@ f_temp.close()
 f_readme = open(dirHere + '\\README.md', 'r', encoding = readmeCodec)
 f = f_readme.readlines()
 
-# 以適當編碼逐行讀取 Config.py 的內容到串列 f_conf 裡面
-f_configpy = open(dirHere + '\\ConfigData\\Config.py', 'r', encoding = ConfigData.ConfigReader.configCodec)
-f_conf = f_configpy.readlines()
+ToC_master = ConfigData.Config.ToC_master
 
 # 偵測各級標題，並加上字體樣式與錨點
 for i in range(0, len(f)):
 
     reading = f[i]
 
+    if ToC_master not in [1, 2, 3, 4, 5, 6]:
+        break
+
     # 偵測一級標題
-    if reading[:2] == '# ':
-        if reading[-1:] == '\n':
-            reading = reading[:-1]
-        readingAncher = '-'.join((''.join(reading[2:].lower().split('.'))).split(' '))
-        f[i] = '* [**' + reading[2:] + '**](#' + readingAncher + ')\n'
-        continue
+    if ToC_master == 1:
+        if reading[:2] == '# ':
+            if reading[-1:] == '\n':
+                reading = reading[:-1]
+            readingAncher = '-'.join((''.join(reading[2:].lower().split('.'))).split(' '))
+            f[i] = '* [' + reading[2:] + '](#' + readingAncher + ')\n'
+            continue
 
     # 偵測二級標題
-    if reading[:3] == '## ':
-        if reading[-1:] == '\n':
-            reading = reading[:-1]
-        readingAncher = '-'.join((''.join(reading[3:].lower().split('.'))).split(' '))
-        f[i] = '    * [' + reading[3:] + '](#' + readingAncher + ')\n'
-        continue
+    if ToC_master <= 2:
+        if reading[:3] == '## ':
+            if reading[-1:] == '\n':
+                reading = reading[:-1]
+            readingAncher = '-'.join((''.join(reading[3:].lower().split('.'))).split(' '))
+            f[i] = '    * [' + reading[3:] + '](#' + readingAncher + ')\n'
+            continue
 
     # 偵測三級標題
-    if reading[:4] == '### ':
-        if reading[-1:] == '\n':
-            reading = reading[:-1]
-        readingAncher = '-'.join((''.join(reading[4:].lower().split('.'))).split(' '))
-        f[i] = '        * [' + reading[4:] + '](#' + readingAncher + ')\n'
-        continue
+    if ToC_master <= 3:
+        if reading[:4] == '### ':
+            if reading[-1:] == '\n':
+                reading = reading[:-1]
+            readingAncher = '-'.join((''.join(reading[4:].lower().split('.'))).split(' '))
+            f[i] = '        * [' + reading[4:] + '](#' + readingAncher + ')\n'
+            continue
 
     # 偵測四級標題
-    if reading[:5] == '#### ':
-        if reading[-1:] == '\n':
-            reading = reading[:-1]
-        readingAncher = '-'.join((''.join(reading[5:].lower().split('.'))).split(' '))
-        f[i] = '            * [' + reading[5:] + '](#' + readingAncher + ')\n'
-        continue
+    if ToC_master <= 4:
+        if reading[:5] == '#### ':
+            if reading[-1:] == '\n':
+                reading = reading[:-1]
+            readingAncher = '-'.join((''.join(reading[5:].lower().split('.'))).split(' '))
+            f[i] = '            * [' + reading[5:] + '](#' + readingAncher + ')\n'
+            continue
 
     # 偵測五級標題
-    if reading[:6] == '##### ':
-        if reading[-1:] == '\n':
-            reading = reading[:-1]
-        readingAncher = '-'.join((''.join(reading[6:].lower().split('.'))).split(' '))
-        f[i] = '                * [' + reading[6:] + '](#' + readingAncher + ')\n'
-        continue
+    if ToC_master <= 5:
+        if reading[:6] == '##### ':
+            if reading[-1:] == '\n':
+                reading = reading[:-1]
+            readingAncher = '-'.join((''.join(reading[6:].lower().split('.'))).split(' '))
+            f[i] = '                * [' + reading[6:] + '](#' + readingAncher + ')\n'
+            continue
 
     # 偵測六級標題
-    if reading[:7] == '###### ':
-        if reading[-1:] == '\n':
-            reading = reading[:-1]
-        readingAncher = '-'.join((''.join(reading[7:].lower().split('.'))).split(' '))
-        f[i] = '                    * [' + reading[7:] + '](#' + readingAncher + ')\n'
-        continue
+    if ToC_master <= 6:
+        if reading[:7] == '###### ':
+            if reading[-1:] == '\n':
+                reading = reading[:-1]
+            readingAncher = '-'.join((''.join(reading[7:].lower().split('.'))).split(' '))
+            f[i] = '                    * [' + reading[7:] + '](#' + readingAncher + ')\n'
+            continue
 
     # 判定為內文後清空
     f[i] = ''

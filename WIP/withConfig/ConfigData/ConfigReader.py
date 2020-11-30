@@ -16,3 +16,13 @@ f_configpy = open(dirHere + '\\Config.py', 'w', encoding = configCodec)
 f_configpy.write(f_config.read())
 f_config.close()
 f_configpy.close()
+
+import Config
+
+if Config.ToC_in_blockquote == 1:
+    v_bq = '> '
+else:
+    v_bq = ''
+
+if Config.ToC_master == 1:
+    
