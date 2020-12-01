@@ -52,7 +52,7 @@ for i in range(0, len(f)):
     reading = f[i]
 
     if ToC_master not in [1, 2, 3, 4, 5, 6]:
-        f = []
+        f = ['Config.txt 內的 ToC_master 設置錯誤。']
         break
 
     # 偵測一級標題
