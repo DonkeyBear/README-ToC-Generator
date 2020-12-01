@@ -1,5 +1,6 @@
 from chardet import detect as chardetDetect
 from os import path as osPath
+from ConfigData import ConfigReader
 from ConfigData import ConfigPY as Conf
 
 # dirHere 為當前目錄，dirParent 為當前的上一層目錄
@@ -33,17 +34,17 @@ if Conf.ToC_in_blockquote == 1:
 def eraseChar(stringTarget):
     eraseResult = stringTarget
     # 以 eraseTarget 函數記錄要去除的「字」
-    eraseTarget = '.`[](){}'
-    eraseList=[] 
-    eraseList[:0]=eraseTarget
-    for i in range(0, len(eraseList)):
-        eraseResult = ''.join(eraseResult.split(eraseList[i]))
+    eraseTarget = '.`[]()'
+    eraseList = [] 
+    eraseList[:0] = eraseTarget
+    for j in range(0, len(eraseList)):
+        eraseResult = ''.join(eraseResult.split(eraseList[j]))
     return eraseResult
 
 # 定義 deLink() 函數，用以去除超連結
 # TODO
-def deLink(titleLevel, stringTitle):
-    delinkTitle = stringTitle[titleLevel + 1:]
+#def deLink(titleLevel, stringTitle):
+    #delinkTitle = stringTitle[titleLevel + 1:]
 
 # 偵測各級標題，並加上字體樣式與錨點
 for i in range(0, len(f)):
