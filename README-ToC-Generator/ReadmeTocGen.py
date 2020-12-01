@@ -58,54 +58,54 @@ for i in range(0, len(f)):
     if ToC_master == 1:
         if reading[:2] == '# ':
             if reading[-1:] == '\n':
-                reading = reading[:-1]
-            readingAnchor = '-'.join((''.join(''.join(reading[2:].lower().split('.'))).split('`')).split(' '))
-            f[i] = v_BQ + '* [' + v_style1 + reading[2:] + v_style1 + '](#' + readingAnchor + ')\n'
+                reading = reading[2:-1]
+            readingAnchor = '-'.join(eraseChar(reading.lower()).split(' '))
+            f[i] = v_BQ + '* [' + v_style1 + reading + v_style1 + '](#' + readingAnchor + ')\n'
             continue
 
     # 偵測二級標題
     if ToC_master <= 2:
         if reading[:3] == '## ':
             if reading[-1:] == '\n':
-                reading = reading[:-1]
-            readingAnchor = '-'.join((''.join(''.join(reading[3:].lower().split('.'))).split('`')).split(' '))
-            f[i] = v_BQ + (2 - ToC_master) * '    ' + '* [' + v_style2 + reading[3:] + v_style2 + '](#' + readingAnchor + ')\n'
+                reading = reading[3:-1]
+            readingAnchor = '-'.join(eraseChar(reading.lower()).split(' '))
+            f[i] = v_BQ + (2 - ToC_master) * '    ' + '* [' + v_style2 + reading + v_style2 + '](#' + readingAnchor + ')\n'
             continue
 
     # 偵測三級標題
     if ToC_master <= 3:
         if reading[:4] == '### ':
             if reading[-1:] == '\n':
-                reading = reading[:-1]
-            readingAnchor = '-'.join((''.join(''.join(reading[4:].lower().split('.'))).split('`')).split(' '))
-            f[i] = v_BQ + (3 - ToC_master) * '    ' + '* [' + v_style3 + reading[4:] + v_style3 + '](#' + readingAnchor + ')\n'
+                reading = reading[4:-1]
+            readingAnchor = '-'.join(eraseChar(reading.lower()).split(' '))
+            f[i] = v_BQ + (3 - ToC_master) * '    ' + '* [' + v_style3 + reading + v_style3 + '](#' + readingAnchor + ')\n'
             continue
 
     # 偵測四級標題
     if ToC_master <= 4:
         if reading[:5] == '#### ':
             if reading[-1:] == '\n':
-                reading = reading[:-1]
-            readingAnchor = '-'.join((''.join(''.join(reading[5:].lower().split('.'))).split('`')).split(' '))
-            f[i] = v_BQ + (4 - ToC_master) * '    ' + '* [' + v_style4 + reading[5:] + v_style4 + '](#' + readingAnchor + ')\n'
+                reading = reading[5:-1]
+            readingAnchor = '-'.join(eraseChar(reading.lower()).split(' '))
+            f[i] = v_BQ + (4 - ToC_master) * '    ' + '* [' + v_style4 + reading + v_style4 + '](#' + readingAnchor + ')\n'
             continue
 
     # 偵測五級標題
     if ToC_master <= 5:
         if reading[:6] == '##### ':
             if reading[-1:] == '\n':
-                reading = reading[:-1]
-            readingAnchor = '-'.join((''.join(''.join(reading[6:].lower().split('.'))).split('`')).split(' '))
-            f[i] = v_BQ + (5 - ToC_master) * '    ' + '* [' + v_style5 + reading[6:] + v_style5 + '](#' + readingAnchor + ')\n'
+                reading = reading[6:-1]
+            readingAnchor = '-'.join(eraseChar(reading.lower()).split(' '))
+            f[i] = v_BQ + (5 - ToC_master) * '    ' + '* [' + v_style5 + reading + v_style5 + '](#' + readingAnchor + ')\n'
             continue
 
     # 偵測六級標題
     if ToC_master <= 6:
         if reading[:7] == '###### ':
             if reading[-1:] == '\n':
-                reading = reading[:-1]
-            readingAnchor = '-'.join((''.join(''.join(reading[7:].lower().split('.'))).split('`')).split(' '))
-            f[i] = v_BQ + (6 - ToC_master) * '    ' + '* [' + v_style6 + reading[7:] + v_style6 + '](#' + readingAnchor + ')\n'
+                reading = reading[7:-1]
+            readingAnchor = '-'.join(eraseChar(reading.lower()).split(' '))
+            f[i] = v_BQ + (6 - ToC_master) * '    ' + '* [' + v_style6 + reading + v_style6 + '](#' + readingAnchor + ')\n'
             continue
 
     # 判定為內文後清空
