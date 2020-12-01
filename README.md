@@ -33,7 +33,7 @@
 
 　　簡述不同版本的各項功能。
 
-### [README-ToC-Generator](https://github.com/DonkeyBear/README-ToC-Generator/tree/main/README-ToC-Generator)  `v1.0`
+### [README-ToC-Generator](https://github.com/DonkeyBear/README-ToC-Generator/tree/main/README-ToC-Generator) `v1.0`
 
 　　功能相對齊全的 README 目錄產生器，可透過 `Config.txt` 設定目錄樣式。
 
@@ -49,7 +49,7 @@
 
 [返回目錄](#目錄)
 
-## 使用說明
+## 使[用)說]明
 
 　　將編寫好的 `README.md` 與目錄產生器置於同一路徑下，執行目錄產生器後即自動生成目錄 `ToC.md`。
 

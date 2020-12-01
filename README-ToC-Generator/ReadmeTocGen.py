@@ -29,6 +29,9 @@ v_BQ = ''
 if Conf.ToC_in_blockquote == 1:
     v_BQ = '> '
 
+def deLink(stringTitle):
+    
+
 # 偵測各級標題，並加上字體樣式與錨點
 for i in range(0, len(f)):
 
@@ -43,7 +46,7 @@ for i in range(0, len(f)):
         if reading[:2] == '# ':
             if reading[-1:] == '\n':
                 reading = reading[:-1]
-            readingAncher = '-'.join((''.join(reading[2:].lower().split('.'))).split(' '))
+            readingAncher = '-'.join((''.join(''.join(reading[2:].lower().split('.'))).split('`')).split(' '))
             f[i] = v_BQ + '* [' + v_style1 + reading[2:] + v_style1 + '](#' + readingAncher + ')\n'
             continue
 
@@ -52,7 +55,7 @@ for i in range(0, len(f)):
         if reading[:3] == '## ':
             if reading[-1:] == '\n':
                 reading = reading[:-1]
-            readingAncher = '-'.join((''.join(reading[3:].lower().split('.'))).split(' '))
+            readingAncher = '-'.join((''.join(''.join(reading[3:].lower().split('.'))).split('`')).split(' '))
             f[i] = v_BQ + (2 - ToC_master) * '    ' + '* [' + v_style2 + reading[3:] + v_style2 + '](#' + readingAncher + ')\n'
             continue
 
@@ -61,7 +64,7 @@ for i in range(0, len(f)):
         if reading[:4] == '### ':
             if reading[-1:] == '\n':
                 reading = reading[:-1]
-            readingAncher = '-'.join((''.join(reading[4:].lower().split('.'))).split(' '))
+            readingAncher = '-'.join((''.join(''.join(reading[4:].lower().split('.'))).split('`')).split(' '))
             f[i] = v_BQ + (3 - ToC_master) * '    ' + '* [' + v_style3 + reading[4:] + v_style3 + '](#' + readingAncher + ')\n'
             continue
 
@@ -70,7 +73,7 @@ for i in range(0, len(f)):
         if reading[:5] == '#### ':
             if reading[-1:] == '\n':
                 reading = reading[:-1]
-            readingAncher = '-'.join((''.join(reading[5:].lower().split('.'))).split(' '))
+            readingAncher = '-'.join((''.join(''.join(reading[5:].lower().split('.'))).split('`')).split(' '))
             f[i] = v_BQ + (4 - ToC_master) * '    ' + '* [' + v_style4 + reading[5:] + v_style4 + '](#' + readingAncher + ')\n'
             continue
 
@@ -79,7 +82,7 @@ for i in range(0, len(f)):
         if reading[:6] == '##### ':
             if reading[-1:] == '\n':
                 reading = reading[:-1]
-            readingAncher = '-'.join((''.join(reading[6:].lower().split('.'))).split(' '))
+            readingAncher = '-'.join((''.join(''.join(reading[6:].lower().split('.'))).split('`')).split(' '))
             f[i] = v_BQ + (5 - ToC_master) * '    ' + '* [' + v_style5 + reading[6:] + v_style5 + '](#' + readingAncher + ')\n'
             continue
 
@@ -88,7 +91,7 @@ for i in range(0, len(f)):
         if reading[:7] == '###### ':
             if reading[-1:] == '\n':
                 reading = reading[:-1]
-            readingAncher = '-'.join((''.join(reading[7:].lower().split('.'))).split(' '))
+            readingAncher = '-'.join((''.join(''.join(reading[7:].lower().split('.'))).split('`')).split(' '))
             f[i] = v_BQ + (6 - ToC_master) * '    ' + '* [' + v_style6 + reading[7:] + v_style6 + '](#' + readingAncher + ')\n'
             continue
 
