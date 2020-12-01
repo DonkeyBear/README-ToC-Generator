@@ -29,13 +29,18 @@ v_BQ = ''
 if Conf.ToC_in_blockquote == 1:
     v_BQ = '> '
 
+# 定義 eraseChar() 函數，兩個參數皆為字串
 def eraseChar(eraseTarget, stringTarget):
-    return ''.join(stringTarget.split(eraseTarget))
-
-print(eraseChar('/', '123/456/789'))
+    eraseResult = stringTarget
+    eraseList=[] 
+    eraseList[:0]=eraseTarget
+    for i in range(0, len(eraseList)):
+        eraseResult = ''.join(eraseResult.split(eraseList[i]))
+    return eraseResult
 
 def deLink(titleLevel, stringTitle):
-    stringTitle = stringTitle[titleLevel + 1:]
+    delinkTitle = stringTitle[titleLevel + 1:]
+
 
 
 # 偵測各級標題，並加上字體樣式與錨點
