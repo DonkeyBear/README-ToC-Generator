@@ -29,7 +29,7 @@ v_BQ = ''
 if Conf.ToC_in_blockquote == 1:
     v_BQ = '> '
 
-# 定義 eraseChar() 函數
+# 定義 eraseChar() 函數，用以去除文字
 def eraseChar(stringTarget):
     eraseResult = stringTarget
     # 以 eraseTarget 函數記錄要去除的「字」
@@ -40,11 +40,10 @@ def eraseChar(stringTarget):
         eraseResult = ''.join(eraseResult.split(eraseList[i]))
     return eraseResult
 
+# 定義 deLink() 函數，用以去除超連結
+# TODO
 def deLink(titleLevel, stringTitle):
     delinkTitle = stringTitle[titleLevel + 1:]
-
-efegrer(wegr)wf[ewef](fweffwefefe)wefefwf(wefw)[wef]
-
 
 # 偵測各級標題，並加上字體樣式與錨點
 for i in range(0, len(f)):
