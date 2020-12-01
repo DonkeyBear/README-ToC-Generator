@@ -29,8 +29,14 @@ v_BQ = ''
 if Conf.ToC_in_blockquote == 1:
     v_BQ = '> '
 
-def deLink(stringTitle):
-    
+def eraseChar(eraseTarget, stringTarget):
+    return ''.join(stringTarget.split(eraseTarget))
+
+print(eraseChar('/', '123/456/789'))
+
+def deLink(titleLevel, stringTitle):
+    stringTitle = stringTitle[titleLevel + 1:]
+
 
 # 偵測各級標題，並加上字體樣式與錨點
 for i in range(0, len(f)):
