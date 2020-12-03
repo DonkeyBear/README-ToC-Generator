@@ -34,7 +34,7 @@ if Conf.ToC_in_blockquote == 1:
 def eraseChar(stringTarget):
     eraseResult = stringTarget
     # 以 eraseTarget 函數記錄要去除的「字」
-    eraseTarget = '.`[](){}'
+    eraseTarget = '.`[](){}/'
     eraseList = [] 
     eraseList[:0] = eraseTarget
     for j in range(0, len(eraseList)):
